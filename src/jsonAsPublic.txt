@@ -1,0 +1,37 @@
+1- Create Json File in [ src directory ]: ----- 
+	like data.json
+
+2- put your data as json key in double qoutation " "
+
+
+3- create file typings [ src directory ] : ------
+
+	json-typings.d.ts
+
+
+4- write this line in it : --- 
+
+   declare module "*.json" {
+
+       const value:any;
+      export default value;
+
+     }
+
+
+5- import the json file in any place with any name you need like this 
+	
+	import postJson from "src/data.json"
+
+
+6- add this line in component class that you need 
+
+	products:Products[]=postJson ;
+
+
+postJson :: the name of data return from data.json ===== you can rename it to any name
+
+Products: with " P " capital the name of the interface of your data 
+
+products: with " p " small the variable the containe data that can use it in html file 
+

@@ -1,0 +1,178 @@
+<div
+  class="m-auto col-md-5 col-lg-4 p-2 rounded-2 border border-1 border-success"
+>
+  <h2 class="text-center ">Register</h2>
+  <form
+    [formGroup]="userForm"
+    (ngSubmit)="submitUserForm()"
+    class="p-4 rounded-2  "
+  >
+    <div class="mb-2">
+      <label for="Name" class="form-label fw-bold">Name</label>
+
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control shadow-none"
+        id="Name"
+        placeholder="Enter Name"
+        [ngStyle]="{
+          'border-color':
+            userForm.controls['name'].touched &&
+            userForm.controls['name'].invalid
+              ? 'red'
+              : 'grey'
+        }"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          userForm.controls['name'].touched && userForm.controls['name'].invalid
+        "
+      >
+        <small *ngIf="userForm.controls['name']?.errors?.['required']"
+          >Name is a required field!</small
+        >
+        <small *ngIf="userForm.controls['name']?.errors?.['minlength']"
+          >Length Should Be More Than 5 Char!!!
+        </small>
+      </div>
+    </div>
+
+    <div class="mb-2">
+      <label for="email" class="form-label fw-bold">EMail</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control shadow-none"
+        id="email"
+        placeholder="Enter  E-Mail"
+        [ngStyle]="{
+          'border-color':
+            userForm.controls['email'].touched &&
+            userForm.controls['email'].invalid
+              ? 'red'
+              : 'grey'
+        }"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          userForm.controls['email'].touched &&
+          userForm.controls['email'].invalid
+        "
+      >
+        <small *ngIf="userForm.controls['email']?.errors?.['required']"
+          >E-Mail is a required field!</small
+        >
+        <small *ngIf="userForm.controls['email']?.errors?.['pattern']"
+          >E-Mail Don't Match !!!
+        </small>
+     
+      </div>
+    </div>
+    <div class="mb-2">
+      <label for="userName" class="form-label fw-bold">UserName</label>
+      <input
+        formControlName="userName"
+        type="text"
+        class="form-control shadow-none"
+        id="userName "
+        placeholder="Enter User-Name"
+        [ngStyle]="{
+          'border-color':
+            userForm.controls['userName'].touched &&
+            userForm.controls['userName'].invalid
+              ? 'red'
+              : 'grey'
+        }"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          userForm.controls['userName'].touched &&
+          userForm.controls['userName'].invalid
+        "
+      >
+        <small *ngIf="userForm.controls['userName']?.errors?.['required']"
+          >UserName is a required field!</small
+        >
+        <small *ngIf="userForm.controls['userName']?.errors?.['pattern']"
+          >UserName Don't Match !!!
+        </small>
+      
+      </div>
+    </div>
+
+    <div class="mb-2">
+      <label for="Password" class="form-label fw-bold">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control shadow-none"
+        id="Password"
+        placeholder="Enter Password"
+        [ngStyle]="{
+          'border-color':
+            userForm.controls['password'].touched &&
+            userForm.controls['password'].invalid
+              ? 'red'
+              : 'grey'
+        }"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          userForm.controls['password'].touched &&
+          userForm.controls['password'].invalid
+        "
+      >
+        <small *ngIf="userForm.controls['password']?.errors?.['required']"
+          >password is a required field!</small
+        >
+        <small *ngIf="userForm.controls['password']?.errors?.['minLength']"
+          >Password at Least 8 Char !!!
+        </small>
+        <small *ngIf="userForm.controls['password']?.errors?.['pattern']"
+          >Password Don't Match !!!
+        </small>
+
+      </div>
+    </div>
+    <div class="mb-2">
+      <label for="confirmPassword" class="form-label fw-bold"
+        >ConfirmedPassword</label
+      >
+      <input
+        formControlName="confirmPassword"
+        type="password"
+        class="form-control shadow-none"
+        id="confirmPassword"
+        placeholder="Enter Confirmed-Password"
+        [ngStyle]="{
+          'border-color':
+            userForm.controls['confirmPassword'].touched &&
+            userForm.controls['confirmPassword'].invalid
+              ? 'red'
+              : 'grey'
+        }"
+      />
+      <div
+        class="text-danger"
+        *ngIf="userForm.controls['confirmPassword'].touched"
+      >
+        <small *ngIf="userForm.errors?.['passwordmatcherror']"
+          >ConfirmPassword And Password Don't Match!</small
+        >
+      </div>
+    </div>
+
+    <div class="bt">
+      <button class="py-2 px-4 btn btn-success mt-4" [disabled]="userForm.invalid">Submit</button>
+
+      
+    </div>
+  </form>
+
+ 
+</div>

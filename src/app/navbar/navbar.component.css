@@ -1,0 +1,10 @@
+
+.active{
+    color: black !important;
+    border-bottom: 3px solid orange;
+    
+}
+.nav-item .nav-link{
+    font-size: 1.4rem;
+    font-weight: bold;
+}

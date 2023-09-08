@@ -1,0 +1,16 @@
+<div class="card">
+  <img
+    [src]="inputCardToChild.images[0]"
+    class="card-img-top"
+    alt="..."
+    height="250px"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ inputCardToChild.title }}</h5>
+    <p class="card-text">{{ inputCardToChild.description}}</p>
+    <h6 class="card-text">Price :  {{ inputCardToChild.price | currency }} </h6>
+    <h6 [class]="inputCardToChild.stock > 0 ?'text-primary ':'text-danger '">Stock: {{inputCardToChild.stock}} </h6>
+    <button class="btn btn-warning me-2" (click)="getProductInfo(inputCardToChild.id) ">Details</button>
+    <button class="btn btn-secondary" (click)="addProToServ(inputCardToChild)">AddToCard</button>
+  </div>
+</div>

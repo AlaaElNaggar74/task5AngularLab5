@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="pb-5">
+    <h1 class="mb-5 text-center">Details</h1>
+    <div
+      class="row m-auto col-11 col-md-12 align-items-center justify-content-between mb-5"
+    >
+      <div class="col-md-5 rounded-2 py-4 border border-2 border-black">
+        <img [src]="prodDetails?.images[0]" class="w-100" alt="" />
+      </div>
+      <div class="col-md-6">
+        <div class="card-body mt-md0 mt-3">
+          <h5 class="card-title mb-2">
+            Category : {{ prodDetails?.category }}
+          </h5>
+          <h5 class="card-title mb-2">Brand : {{ prodDetails?.brand }}</h5>
+          <p class="card-text">
+            <span class="fw-bold">Description</span>:
+            {{ prodDetails?.description }}
+          </p>
+          <h6 class="card-text">Price : {{ prodDetails?.price | currency }}</h6>
+          <P>rating {{ prodDetails?.rating }} </P>
+          <P>DiscountPercentage {{ prodDetails?.discountPercentage }} </P>
+          <div class="btnx">
+            <button class="btn btn-success me-3 px-4" (click)="backHome()">
+              Back
+            </button>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

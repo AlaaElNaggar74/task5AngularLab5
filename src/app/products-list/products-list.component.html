@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="text-center text-info mb-3"> Home Page </h1>
+<div class="col-lg-6 col-md-8 my-3 m-auto">
+  <div class="input-group mb-4">
+    <input
+      [(ngModel)]="categoryType"
+      type="text"
+      class="form-control shadow-none py-2"
+      placeholder="Search By Name . . . ."
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+      (keyup)="keyUp(categoryType)"
+    />
+  </div>
+</div>
+<div class="row">
+  <ng-container *ngFor="let product of products">
+    <app-product-card
+      [inputCardToChild]="product"
+      class="col-md-6 col-lg-4 mb-3"
+    ></app-product-card>
+  </ng-container>
+</div>
+
+</div>
